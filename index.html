@@ -733,6 +733,130 @@
             color: var(--accent);
         }
 
+        /* Blog Section */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .blog-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .blog-image {
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-card:nth-child(1) .blog-image {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(168, 85, 247, 0.15));
+        }
+
+        .blog-card:nth-child(2) .blog-image {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(236, 72, 153, 0.15));
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .blog-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--primary);
+        }
+
+        .blog-read-time {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .blog-content h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .blog-content p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.25rem;
+            flex: 1;
+        }
+
+        .blog-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            padding: 0.25rem 0.5rem;
+            background: rgba(168, 85, 247, 0.1);
+            color: var(--secondary);
+            border-radius: 4px;
+        }
+
+        .blog-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .blog-link:hover {
+            gap: 0.75rem;
+        }
+
+        .blog-link svg {
+            transition: transform 0.3s ease;
+        }
+
+        .blog-link:hover svg {
+            transform: translateX(3px);
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Contact Section */
         .contact {
             background: var(--bg-card);
@@ -965,6 +1089,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#blog">Blog</a></li>
             <li><a href="#certifications">Certifications</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#contact" class="nav-cta">Contact</a></li>
@@ -1313,6 +1438,72 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+        <div class="section-header reveal">
+            <span class="section-label">Latest Articles</span>
+            <h2 class="section-title">BLOG & INSIGHTS</h2>
+            <p class="section-description">
+                Sharing knowledge and experiences about AI, MLOps, and technology
+            </p>
+        </div>
+        <div class="blog-grid">
+            <article class="blog-card reveal">
+                <div class="blog-image">🖥️</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-date">Oct 16, 2024</span>
+                        <span class="blog-read-time">📖 10 min read</span>
+                    </div>
+                    <h3>Build Your AI Server from Scratch: GPU Passthrough, Ollama, Open WebUI, and Cloudflare Tunnel</h3>
+                    <p>
+                        Running modern AI models on your own server with secure internet access. 
+                        A comprehensive guide to building a fully-featured AI infrastructure with 
+                        GPU acceleration, local LLMs, and secure remote access.
+                    </p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Proxmox</span>
+                        <span class="blog-tag">GPU Passthrough</span>
+                        <span class="blog-tag">Ollama</span>
+                        <span class="blog-tag">Cloudflare</span>
+                    </div>
+                    <a href="https://medium.com/@fatihhbayramm" target="_blank" class="blog-link">
+                        Read on Medium
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+            <article class="blog-card reveal">
+                <div class="blog-image">📚</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-date">Oct 10, 2024</span>
+                        <span class="blog-read-time">📖 8 min read</span>
+                    </div>
+                    <h3>Vakıf Serisinden Günümüze: Veri Bilimiyle Geleceği Öngörmek ve İnsan Faktörünün Önemi</h3>
+                    <p>
+                        Isaac Asimov'un Vakıf serisinden ilham alarak veri bilimi, psiko-tarih ve 
+                        yapay zekanın geleceği öngörme kapasitesi üzerine düşünceler. 
+                        İnsan faktörünün teknolojideki yeri.
+                    </p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Data Science</span>
+                        <span class="blog-tag">AI Philosophy</span>
+                        <span class="blog-tag">Türkçe</span>
+                    </div>
+                    <a href="https://medium.com/@fatihhbayramm" target="_blank" class="blog-link">
+                        Read on Medium
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
         </div>
     </section>
 
